@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoCriper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7v-OH-xWX">
+                                <rect key="frame" x="164" y="617" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Dzh-DM-9Js"/>
+                                    <constraint firstAttribute="width" constant="46" id="mkS-bx-tAx"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapedEditButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ji1-Wk-A3b"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f7v-OH-xWX" secondAttribute="bottom" constant="20" id="FFn-pf-Gyd"/>
+                            <constraint firstItem="f7v-OH-xWX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uAF-AN-oDi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="editButton" destination="f7v-OH-xWX" id="DST-gP-84s"/>
+                        <segue destination="5FZ-2j-jsR" kind="presentation" identifier="PhotoCrip" id="6q0-G1-TWN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HCf-4v-EdF">
+            <objects>
+                <navigationController id="5FZ-2j-jsR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fbG-Yg-YYV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="eFW-Pv-oMS" kind="relationship" relationship="rootViewController" id="SYK-gN-C17"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ce-qn-T2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="814" y="37"/>
+        </scene>
+        <!--Photo Crip View Controller-->
+        <scene sceneID="luD-ru-uox">
+            <objects>
+                <viewController id="eFW-Pv-oMS" customClass="PhotoCripViewController" customModule="PhotoCriper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8IU-w0-kSu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mge-wA-i2C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QPv-86-y1L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEL-Bq-laF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eFW-Pv-oMS" id="zAa-6J-EB3"/>
+                                </connections>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pC8-uJ-3Di" customClass="MaskView" customModule="PhotoCriper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aia-aR-m2r">
+                                <rect key="frame" x="164" y="617" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="9Fa-pv-wUd"/>
+                                    <constraint firstAttribute="height" constant="30" id="hux-Rl-g58"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTapSelectPhotoButton:" destination="eFW-Pv-oMS" eventType="touchUpInside" id="Jbs-B4-csc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AEL-Bq-laF" secondAttribute="trailing" id="1UY-m6-uqM"/>
+                            <constraint firstItem="pC8-uJ-3Di" firstAttribute="leading" secondItem="QPv-86-y1L" secondAttribute="leading" id="4hs-4j-PYn"/>
+                            <constraint firstItem="Mge-wA-i2C" firstAttribute="top" secondItem="pC8-uJ-3Di" secondAttribute="bottom" id="QFs-3B-v5W"/>
+                            <constraint firstItem="Mge-wA-i2C" firstAttribute="top" secondItem="AEL-Bq-laF" secondAttribute="bottom" id="VRf-Eo-USr"/>
+                            <constraint firstAttribute="trailing" secondItem="pC8-uJ-3Di" secondAttribute="trailing" id="c1v-l1-iS5"/>
+                            <constraint firstItem="aia-aR-m2r" firstAttribute="centerX" secondItem="QPv-86-y1L" secondAttribute="centerX" id="k1g-qk-1oI"/>
+                            <constraint firstItem="pC8-uJ-3Di" firstAttribute="top" secondItem="8IU-w0-kSu" secondAttribute="bottom" id="kfe-e5-dqw"/>
+                            <constraint firstItem="AEL-Bq-laF" firstAttribute="leading" secondItem="QPv-86-y1L" secondAttribute="leading" id="swM-8M-9Dt"/>
+                            <constraint firstItem="AEL-Bq-laF" firstAttribute="top" secondItem="QPv-86-y1L" secondAttribute="top" id="zNl-pk-rTA"/>
+                            <constraint firstItem="Mge-wA-i2C" firstAttribute="top" secondItem="aia-aR-m2r" secondAttribute="bottom" constant="20" id="zma-ie-ze7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tkd-x2-QvX">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="QTr-Db-JlK">
+                            <connections>
+                                <action selector="didTapDismissButton:" destination="eFW-Pv-oMS" id="YGD-Lf-Mwf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="maskView" destination="pC8-uJ-3Di" id="id4-KF-Qva"/>
+                        <outlet property="scrollView" destination="AEL-Bq-laF" id="eEg-xm-B0v"/>
+                        <outlet property="selectPhotoButton" destination="aia-aR-m2r" id="jc1-Ka-sWO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YH2-nz-BwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1568.8" y="36.431784107946029"/>
+        </scene>
+    </scenes>
+</document>
